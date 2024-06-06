@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
+using Brush = System.Windows.Media.Brush;
+using MediaColor = System.Windows.Media.Color;
+using DrawingColor = System.Drawing.Color;
 
 namespace LoginPage
 {
@@ -28,107 +29,138 @@ namespace LoginPage
             InitializeComponent();
         }
 
-        public int AnimatedTextBoxFontSize
+        public double AnimatedTextBoxBorderRadius
         {
-            get => (int)placeHolderLabel.FontSize;
+            get => roundedRectangle.RadiusX;
+            set => roundedRectangle.RadiusX = roundedRectangle.RadiusY = value;
+        }
+        
+        public char AnimatedTextBoxPassChar
+        {
+            get => animatedPassChar;
             set
             {
-                placeHolderLabel.FontSize = mainTextBox.FontSize = value;
+                if(Convert.ToString(value) != "")
+                {
+                    animatedPassChar = value;
+                }
             }
         }
 
-        public Brush AnimatedTextBoxBorderColor
+        public object AnimatedTextBoxPlaceHolder
         {
-            get => borderRectangle.Stroke;
+            get => placeHolder.Content;
+            set => placeHolder.Content = value;
+        }
+
+        public double AnimatedTextBoxFontSize
+        {
+            get => mainTextBox.FontSize;
             set
             {
-                placeHolderLabel.Foreground = borderRectangle.Stroke = mainTextBox.Foreground = value;
+                mainTextBox.FontSize = placeHolder.FontSize = viewPassLabel.FontSize = value;
             }
         }
 
-        public Brush AnimatedTextBoxBackColor
+        public Brush AnimatedTextBoxBackground
         {
-            get => Background;
+            get => mainTextBox.Background;
+            set => mainTextBox.Background = placeHolder.Background = value;
+        }
+
+        public Brush AnimatedTextBoxForeground
+        {
+            get => mainTextBox.Foreground;
             set
             {
-                placeHolderLabel.Background = Background = value;
+                if (value != null)
+                {
+                    roundedRectangle.Stroke = mainTextBox.Foreground = placeHolder.Foreground = viewPassLabel.Foreground = value;
+                }
             }
         }
 
-        public int BorderRadius
+        public bool IsPasswordType
         {
-            get => Convert.ToInt32(borderRectangle.RadiusX);
-            set
-            {
-                borderRectangle.RadiusX = borderRectangle.RadiusY = value;
-                mainTextBox.Margin = new Thickness(value, value * 2, value * 2, value);
-            }
+            get; set;
         }
 
-        public string PlaceHolderText
-        {
-            get
-            {
-                return placeHolderText;
-            }
+        private char animatedPassChar = '●';
+        private string password;
 
-            set
-            {
-                placeHolderText = value;
-                placeHolderLabel.Content = value;
-            }
-        }
-
-        private string placeHolderText;
-
-        private void OnAnimatedTextBoxGotFocused(object sender, RoutedEventArgs e)
+        private void MainTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             if (mainTextBox.Text == "")
             {
-                placeHolderLabel.FontSize = 12;
-                AnimatePlaceHolder();
+                double top = -(ActualHeight);
+                ThicknessAnimation animation1 = new ThicknessAnimation
+                {
+                    From = placeHolder.Margin,
+                    To = new Thickness(20, top, 0, 0),
+                    Duration = new Duration(TimeSpan.FromMilliseconds(300))
+                };
+
+                DoubleAnimation animation2 = new DoubleAnimation
+                {
+                    From = placeHolder.FontSize,
+                    To = 20,
+                    Duration = new Duration(TimeSpan.FromMilliseconds(300))
+                };
+
+                placeHolder.BeginAnimation(MarginProperty, animation1);
+                placeHolder.BeginAnimation(FontSizeProperty, animation2);
             }
         }
 
-        private void OnAnimatedTextBoxLostFocused(object sender, RoutedEventArgs e)
+        private void MainTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (mainTextBox.Text == "")
             {
-                AnimatePlaceHolder();
-                placeHolderLabel.FontSize = 24;
+                double top = (ActualHeight);
+                ThicknessAnimation animation1 = new ThicknessAnimation
+                {
+                    From = placeHolder.Margin,
+                    To = new Thickness(20, 0, 0, 0),
+                    Duration = new Duration(TimeSpan.FromMilliseconds(300))
+                };
+
+                DoubleAnimation animation2 = new DoubleAnimation
+                {
+                    From = placeHolder.FontSize,
+                    To = AnimatedTextBoxFontSize,
+                    Duration = new Duration(TimeSpan.FromMilliseconds(300))
+                };
+
+                placeHolder.BeginAnimation(MarginProperty, animation1);
+                placeHolder.BeginAnimation(FontSizeProperty, animation2);
             }
         }
 
-        private async void AnimatePlaceHolder()
+        private void PlaceHolder_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            double centerTop = 0; // Center position minus margin
-            double targetTop = -((ActualHeight - placeHolderLabel.ActualHeight) / 2) - 20; // Target top margin
-
-            double currentTop = !mainTextBox.IsFocused ? targetTop : centerTop;
-            double newTop = !mainTextBox.IsFocused ? centerTop : targetTop;
-
-            var thicknessAnimation = new ThicknessAnimation
-            {
-                From = new Thickness(placeHolderLabel.Margin.Left, currentTop, 0, 0),
-                To = new Thickness(placeHolderLabel.Margin.Left, newTop, 0, 0),
-                Duration = new Duration(TimeSpan.FromMilliseconds(300))
-            };
-
-            await AnimateAsync(placeHolderLabel, thicknessAnimation);
+            mainTextBox.Focus();
         }
 
-        private Task AnimateAsync(UIElement element, AnimationTimeline animation)
+        private void PasswordTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            var tcs = new TaskCompletionSource<bool>();
+            if (IsPasswordType)
+            {
+                password += e.Text;
+                mainTextBox.Text += animatedPassChar;
+                mainTextBox.CaretIndex = mainTextBox.Text.Length;
+                e.Handled = true;
+            }
+        }
 
-            if (animation == null)
-                tcs.SetException(new ArgumentNullException(nameof(animation)));
-
-            animation.Completed += (s, e) => tcs.SetResult(true);
-
-            element.BeginAnimation(FrameworkElement.MarginProperty, animation);
-
-            return tcs.Task;
+        private void PasswordTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (IsPasswordType && e.Key == Key.Back && mainTextBox.Text.Length > 0)
+            {
+                password = password.Substring(0, password.Length - 1);
+                mainTextBox.Text = mainTextBox.Text.Substring(0, mainTextBox.Text.Length - 1);
+                mainTextBox.CaretIndex = mainTextBox.Text.Length;
+                e.Handled = true;
+            }
         }
     }
 }

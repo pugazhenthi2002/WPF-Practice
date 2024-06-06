@@ -6,30 +6,15 @@
         xmlns:local="clr-namespace:LoginPage"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
-    <Grid Background="AliceBlue">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Canvas Grid.Row="0" Grid.Column="0"/>
-        <Grid Grid.Row="0" Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="100"/>
-            </Grid.RowDefinitions>
-
-            <local:AnimatedTextBox Grid.Row="1" AnimatedTextBoxBackColor="AliceBlue"
-                                   AnimatedTextBoxBorderColor="Blue" PlaceHolderText="Username"
-                                   AnimatedTextBoxFontSize="24"/>
-            <local:AnimatedTextBox Grid.Row="2" AnimatedTextBoxBackColor="AliceBlue"
-                                   AnimatedTextBoxBorderColor="Blue" PlaceHolderText="Password"
-                                   AnimatedTextBoxFontSize="24"/>
-        </Grid>
-
+    <Grid Background="#FFC0E1FF">
+        <local:AnimatedTextBox AnimatedTextBoxBackground="#FFC0E1FF" 
+                               AnimatedTextBoxForeground="#FF7EA062" AnimatedTextBoxBorderRadius="16" 
+                               AnimatedTextBoxFontSize="28" HorizontalAlignment="Left" 
+                               VerticalAlignment="Top" Height="77" Width="385"/>
+        <local:AnimatedTextBox AnimatedTextBoxBackground="#FFC0E1FF" 
+            AnimatedTextBoxForeground="#FF7EA062" AnimatedTextBoxBorderRadius="16" 
+            AnimatedTextBoxFontSize="28" HorizontalAlignment="Right" 
+            VerticalAlignment="Bottom" Height="77" Width="385" />
     </Grid>
+
 </Window>

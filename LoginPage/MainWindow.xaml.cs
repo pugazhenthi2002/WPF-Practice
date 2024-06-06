@@ -24,5 +24,9 @@ namespace LoginPage
         {
             InitializeComponent();
         }
+
+        private void OnClicked(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

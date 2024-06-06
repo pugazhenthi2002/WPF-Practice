@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:LoginPage"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <BitmapImage x:Key="ViewPassword" UriSource="Images/PasswordView.png"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -4,22 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LoginPage"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Height="274.705" Width="623.529">
 
     <Grid>
-        <Rectangle Name="borderRectangle" Stroke="Blue" RadiusX="20" RadiusY="20" Margin="10"/>
-
-        <Label Name="placeHolderLabel" Content="Hello, World!"
-               HorizontalAlignment="Left"
-               VerticalAlignment="Center"
-               Background="LightGray"
-               Margin="20"/>
+        <TextBox x:Name="mainTextBox" Background="Transparent" Foreground="Red" 
+                 BorderThickness="0" VerticalContentAlignment="Center" Padding="20, 0, 0, 0"
+                 GotFocus="MainTextBox_GotFocus"    LostFocus="MainTextBox_LostFocus"
+                 PreviewKeyDown="PasswordTextBox_PreviewKeyDown"
+                 PreviewTextInput="PasswordTextBox_PreviewTextInput"/>
         
-        <TextBox Name="mainTextBox" Background="Transparent" Foreground="AliceBlue" FontSize="24" 
-                 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="10, 30, 10, 30"
-                 GotFocus="OnAnimatedTextBoxGotFocused" Padding="10" BorderThickness="0"
-                 LostFocus="OnAnimatedTextBoxLostFocused"/>
+        <Rectangle x:Name="roundedRectangle" RadiusX="20" RadiusY="20" StrokeThickness="2"/>
+        <Label x:Name="placeHolder" Background="Transparent"    Foreground="Red"
+               Content="Username" FontSize="24" MouseDown="PlaceHolder_MouseDown" 
+               HorizontalAlignment="Left" VerticalAlignment="Center"
+               Margin="20, 0, 0, 0"/>
+
+        <Label Content="👁️" Foreground="Red" 
+               HorizontalAlignment="Right" VerticalAlignment="Center"
+               Name="viewPassLabel"/>
     </Grid>
-    
 </UserControl>

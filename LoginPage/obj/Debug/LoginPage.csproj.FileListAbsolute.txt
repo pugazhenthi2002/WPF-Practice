@@ -16,3 +16,4 @@ C:\Users\Pugaizhenthi\source\repos\WPF_Practice\LoginPage\obj\Debug\LoginPage.cs
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\LoginPage\obj\Debug\LoginPage.exe
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\LoginPage\obj\Debug\LoginPage.pdb
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\LoginPage\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\LoginPage\obj\Debug\App.baml
