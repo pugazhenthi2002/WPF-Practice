@@ -5,7 +5,10 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
-            <BitmapImage x:Key="ViewPassword" UriSource="Images/PasswordView.png"/>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="style.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
     </Application.Resources>
 </Application>

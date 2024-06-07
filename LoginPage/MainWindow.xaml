@@ -5,16 +5,154 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LoginPage"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
-    <Grid Background="#FFC0E1FF">
-        <local:AnimatedTextBox AnimatedTextBoxBackground="#FFC0E1FF" 
-                               AnimatedTextBoxForeground="#FF7EA062" AnimatedTextBoxBorderRadius="16" 
-                               AnimatedTextBoxFontSize="28" HorizontalAlignment="Left" 
-                               VerticalAlignment="Top" Height="77" Width="385"/>
-        <local:AnimatedTextBox AnimatedTextBoxBackground="#FFC0E1FF" 
-            AnimatedTextBoxForeground="#FF7EA062" AnimatedTextBoxBorderRadius="16" 
-            AnimatedTextBoxFontSize="28" HorizontalAlignment="Right" 
-            VerticalAlignment="Bottom" Height="77" Width="385" />
+        Padding="0"
+        Title="MainWindow" Height="694.5" Width="951.728"
+        WindowStyle="None">
+    
+    
+    <Grid x:Name="MainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0"
+              Background="#27374D">
+            <Image Name="signInTemplateImage" 
+                   Source="/LoginPage;component/Resources/notepad.png" 
+                   Panel.ZIndex="1"/>
+        </Grid>
+        
+        <Grid Grid.Column="0" x:Name="G1">
+            <Grid Background="#DDE6ED">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <local:AnimatedTextBox Grid.Row="2" 
+                                       AnimatedTextBoxBackground="#DDE6ED"
+                                       AnimatedTextBoxForeground="#27374D"
+                                       Margin="10"
+                                       AnimatedTextBoxPlaceHolder="Email" 
+                                       AnimatedTextBoxBorderRadius="10"
+                                       Height="Auto" 
+                                       Width="400"/>
+
+                <local:AnimatedTextBox Grid.Row="3" 
+                                       AnimatedTextBoxBackground="#DDE6ED"
+                                       AnimatedTextBoxForeground="#27374D"
+                                       Margin="10"
+                                       AnimatedTextBoxPlaceHolder="Username" 
+                                       AnimatedTextBoxBorderRadius="10"
+                                       Height="Auto" 
+                                       Width="400"/>
+
+                <local:AnimatedTextBox Grid.Row="4" 
+                                       AnimatedTextBoxBackground="#DDE6ED"
+                                       AnimatedTextBoxForeground="#27374D"
+                                       Margin="10"
+                                       AnimatedTextBoxPlaceHolder="Create Password" 
+                                       AnimatedTextBoxBorderRadius="10"
+                                       IsPasswordType="True"
+                                       Height="Auto" 
+                                       Width="400"/>
+
+                <local:AnimatedTextBox Grid.Row="5" 
+                                       AnimatedTextBoxBackground="#DDE6ED"
+                                       AnimatedTextBoxForeground="#27374D"
+                                       Margin="10"
+                                       AnimatedTextBoxPlaceHolder="Re-Enter Password" 
+                                       AnimatedTextBoxBorderRadius="10"
+                                       IsPasswordType="True"
+                                       Height="Auto" 
+                                       Width="400"/>
+
+                <Button Grid.Row="7" 
+                        Name="createButton"
+                        Style="{StaticResource roundedButton}"
+                        Margin="75, 10, 75, 10" 
+                        Width="200"
+                        Cursor="Hand"
+                        Content="Create"/>
+
+                <Label Grid.Row="8"
+                       Style="{StaticResource clickableLabel}"
+                       Content="Already have an Account! Sign In"
+                       MouseDown="OnAlreadyHaveAccountClicked"/>
+
+            </Grid>
+
+            
+
+        </Grid>
+        
+        
+        
+        <Grid Name="signInGrid" 
+              Grid.Column="1"
+              Background="#DDE6ED">
+            <Grid.RowDefinitions>
+                <RowDefinition Name="logoRow" Height="2*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0"
+                   Source="/LoginPage;component/Resources/3d-notes.png"
+                   Margin="20"/>
+
+            <Label Grid.Row="1"
+                   Style="{StaticResource logoLabel}"
+                   Content="NotePad ++"/>
+
+            <local:AnimatedTextBox Grid.Row="2"
+                                   AnimatedTextBoxForeground="#27374D"
+                                   AnimatedTextBoxBackground="#DDE6ED"
+                                   AnimatedTextBoxBorderRadius="10"
+                                   AnimatedTextBoxFontSize="24"
+                                   Margin="10"
+                                   AnimatedTextBoxPlaceHolder="Username" 
+                                   Height="Auto" 
+                                   Width="400"/>
+
+            <local:AnimatedTextBox Grid.Row="3"
+                                   AnimatedTextBoxForeground="#27374D"
+                                   AnimatedTextBoxBackground="#DDE6ED"
+                                   AnimatedTextBoxBorderRadius="10"
+                                   AnimatedTextBoxFontSize="24"
+                                   Margin="10"
+                                   AnimatedTextBoxPlaceHolder="Password" 
+                                   IsPasswordType="true"
+                                   Width="400" 
+                                   Height="Auto"/>
+
+            <Button x:Name="IsMouseOver" Grid.Row="5"
+                    Style="{StaticResource roundedButton}"
+                    Content="Sign In"
+                    Margin="75, 10, 75, 10" 
+                    Width="200"
+                    Cursor="Hand"/>
+
+            <Label Grid.Row="6"
+                   Content="Don't Have an Account? Sign Up"
+                   Style="{StaticResource clickableLabel}" MouseUp="OnDontHaveAccountClicked"/>
+        </Grid>
+
+        
     </Grid>
 
 </Window>

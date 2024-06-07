@@ -7,20 +7,53 @@
              mc:Ignorable="d" Height="274.705" Width="623.529">
 
     <Grid>
-        <TextBox x:Name="mainTextBox" Background="Transparent" Foreground="Red" 
-                 BorderThickness="0" VerticalContentAlignment="Center" Padding="20, 0, 0, 0"
-                 GotFocus="MainTextBox_GotFocus"    LostFocus="MainTextBox_LostFocus"
-                 PreviewKeyDown="PasswordTextBox_PreviewKeyDown"
-                 PreviewTextInput="PasswordTextBox_PreviewTextInput"/>
-        
-        <Rectangle x:Name="roundedRectangle" RadiusX="20" RadiusY="20" StrokeThickness="2"/>
-        <Label x:Name="placeHolder" Background="Transparent"    Foreground="Red"
-               Content="Username" FontSize="24" MouseDown="PlaceHolder_MouseDown" 
-               HorizontalAlignment="Left" VerticalAlignment="Center"
-               Margin="20, 0, 0, 0"/>
+        <TextBox x:Name="mainTextBox" 
+                 Background="Transparent" 
+                 Foreground="Red" 
+                 BorderThickness="0" 
+                 VerticalContentAlignment="Center" 
+                 Padding="20, 0, 0, 0"
+                 GotFocus="MainTextBox_GotFocus"    
+                 LostFocus="MainTextBox_LostFocus"
+                 PreviewKeyDown="MainTextBox_PreviewKeyDown"    
+                 TextChanged="mainTextBox_TextChanged"
+                 PreviewTextInput="MainTextBox_PreviewTextInput"/>
 
-        <Label Content="👁️" Foreground="Red" 
-               HorizontalAlignment="Right" VerticalAlignment="Center"
-               Name="viewPassLabel"/>
+        <Rectangle x:Name="roundedRectangle" 
+                   RadiusX="20" 
+                   RadiusY="20" 
+                   StrokeThickness="2"
+                   Stroke="Red"/>
+        
+        <Label x:Name="placeHolder" 
+               Background="Transparent"    
+               Foreground="Red"
+               Content="Username" 
+               FontSize="24" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Center"
+               Margin="20, 0, 0, 0"
+               MouseDown="PlaceHolder_MouseDown" />
+
+        <Canvas
+            Name ="viewPassCanvas"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Margin = "0,0,48,48">
+            
+            <Label Content="👁️" 
+               Foreground="Red" 
+               MouseDown="ViewPassLabelClicked"
+               Name="viewPassLabel" 
+               Cursor="Hand"
+                   FontSize="24"/>
+            <Line X1="0" 
+                  Y1="0" 
+                  X2="{Binding ActualWidth, ElementName=viewPassLabel}" 
+                  Y2="{Binding ActualHeight, ElementName=viewPassLabel}"
+                  Stroke="Red" StrokeThickness="2"
+                  Name="viewPassLabelLine"/>
+           
+        </Canvas>
     </Grid>
 </UserControl>
