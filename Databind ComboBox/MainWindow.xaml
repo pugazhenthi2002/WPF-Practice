@@ -1,0 +1,41 @@
+﻿<Window x:Class="Databind_ComboBox.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:Databind_ComboBox"
+		mc:Ignorable="d"
+		Title="MainWindow"
+		Height="450"
+		Width="800">
+	<Window.DataContext>
+		<local:CitizenModel />
+	</Window.DataContext>
+
+	<StackPanel>
+		<ComboBox ItemsSource="{Binding CitizenCollection}"
+				  SelectedItem="{Binding SelectedCitizen}"
+				  Margin="20">
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding FullName}"
+							   FontWeight="Bold"
+							   Foreground="DarkBlue" />
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+
+		<ComboBox ItemsSource="{Binding SelectedCitizen.AllAddress}"
+				  SelectedItem="{Binding SelectedAddress}"
+				  Padding="5"
+				  Margin="20">
+			<ComboBox.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding FullAddress}" />
+				</DataTemplate>
+			</ComboBox.ItemTemplate>
+		</ComboBox>
+
+		<TextBlock Text="{Binding SelectedAddress.FullAddress}" />
+	</StackPanel>
+</Window>

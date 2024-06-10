@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ExpenseTracker.Themes">
+
+	<SolidColorBrush x:Key="PrimaryI"
+					 Color="#1A120B" />
+	<SolidColorBrush x:Key="PrimaryII"
+					 Color="#3C2A21" />
+	<SolidColorBrush x:Key="SecondaryI"
+					 Color="#D5CEA3" />
+	<SolidColorBrush x:Key="SecondaryII"
+					 Color="#E5E5CB" />
+</ResourceDictionary>

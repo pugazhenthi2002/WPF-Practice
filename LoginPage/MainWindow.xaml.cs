@@ -26,32 +26,70 @@ namespace LoginPage
             InitializeComponent();
         }
 
-        private void OnDontHaveAccountClicked(object sender, MouseButtonEventArgs e)
+        private async void OnDontHaveAccountClicked(object sender, MouseButtonEventArgs e)
         {
-            Thickness destinationMargin = new Thickness(ActualWidth, 0, 0, 0);
+            Thickness destinationMargin = new Thickness(ActualWidth / 2, 0, -ActualWidth / 2, 0);
             ThicknessAnimation animation1 = new ThicknessAnimation()
             {
                 From = signInTemplateImage.Margin,
                 To = destinationMargin,
-                Duration = TimeSpan.FromMilliseconds(3000)
+                Duration = TimeSpan.FromMilliseconds(500)
             };
+
+            await AnimateAsync(signInTemplateImage, animation1, MarginProperty);
 
             DoubleAnimation animation2 = new DoubleAnimation()
             {
-                From = 500,
-                To = ActualWidth,
-                Duration = new Duration(TimeSpan.FromSeconds(2))
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromMilliseconds(700)
             };
-            MainGrid.ColumnDefinitions[1].Width = new GridLength(0);
-            //MainGrid.ColumnDefinitions[0].Width = new GridLength(ActualWidth);
-            //signInTemplateImage.BeginAnimation(MarginProperty, animation1);
-            //signInTemplateImage.BeginAnimation(OpacityProperty, animation2);
-            G1.BeginAnimation(MarginProperty, animation1);
+
+            createAccountGrid.BeginAnimation(OpacityProperty, animation2);
+
+            animation2.From = 1;    animation2.To = 0;
+
+            signInGrid.BeginAnimation(OpacityProperty, animation2);
         }
 
-        private void OnAlreadyHaveAccountClicked(object sender, MouseButtonEventArgs e)
+        private async void OnAlreadyHaveAccountClicked(object sender, MouseButtonEventArgs e)
         {
+            Thickness destinationMargin = new Thickness(0, 0, 0, 0);
+            ThicknessAnimation animation1 = new ThicknessAnimation()
+            {
+                From = signInTemplateImage.Margin,
+                To = destinationMargin,
+                Duration = TimeSpan.FromMilliseconds(500)
+            };
 
+            await AnimateAsync(signInTemplateImage, animation1, MarginProperty);
+
+            DoubleAnimation animation2 = new DoubleAnimation()
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromMilliseconds(700)
+            };
+
+            signInGrid.BeginAnimation(OpacityProperty, animation2);
+
+            animation2.From = 1; animation2.To = 0;
+
+            createAccountGrid.BeginAnimation(OpacityProperty, animation2);
+        }
+
+        private Task AnimateAsync(UIElement element, AnimationTimeline animation, DependencyProperty property)
+        {
+            var tcs = new TaskCompletionSource<bool>();
+
+            if (animation == null)
+                tcs.SetException(new ArgumentNullException(nameof(animation)));
+
+            animation.Completed += (s, e) => tcs.SetResult(true);
+
+            element.BeginAnimation(property, animation);
+
+            return tcs.Task;
         }
     }
 }

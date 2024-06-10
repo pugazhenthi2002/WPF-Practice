@@ -1,0 +1,12 @@
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\ExpenseTracker.csprojAssemblyReference.cache
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\MainWindow.g.cs
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\App.g.cs
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\ExpenseTracker_MarkupCompile.cache
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\ExpenseTracker_MarkupCompile.lref
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\App.baml
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\ColorResource.baml
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\MainWindow.baml
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\Style.baml
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\ExpenseTracker.g.resources
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\ExpenseTracker.csproj.GenerateResource.cache
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\obj\Debug\ExpenseTracker.pdb

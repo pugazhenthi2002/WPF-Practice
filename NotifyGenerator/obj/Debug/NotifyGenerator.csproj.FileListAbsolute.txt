@@ -1,0 +1,15 @@
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\bin\Debug\NotifyGenerator.exe.config
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\bin\Debug\NotifyGenerator.exe
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\bin\Debug\NotifyGenerator.pdb
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\MainWindow.g.cs
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\App.g.cs
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator_MarkupCompile.cache
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator_MarkupCompile.lref
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\MainWindow.baml
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.g.resources
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.Properties.Resources.resources
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.csproj.GenerateResource.cache
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.csproj.CoreCompileInputs.cache
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.exe
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.pdb
+C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.csprojAssemblyReference.cache
