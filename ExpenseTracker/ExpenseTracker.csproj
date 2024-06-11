@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter Class\WidthConverter.cs" />
     <Compile Include="SideBarMenu.xaml.cs">
       <DependentUpon>SideBarMenu.xaml</DependentUpon>
     </Compile>

@@ -22,7 +22,6 @@
 
 	<Grid x:Name="MainGrid"
 		  Background="#DDE6ED">
-
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
 			<ColumnDefinition Width="*" />

@@ -9,8 +9,8 @@
 		Height="450"
 		Width="800">
 
-	<!--<Grid>
-		<Grid.RowDefinitions>
+	<Grid>
+		<!--<Grid.RowDefinitions>
 			<RowDefinition Height="75" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
@@ -28,51 +28,25 @@
 				<ColumnDefinition Width="*" />
 			</Grid.ColumnDefinitions>
 
-			<StackPanel Style="{StaticResource NavigationSectionPanel}">
-				<Button  Name="expensesButton"
-						 Style="{StaticResource MenuButtonStyle}"
-						 Click="OnExpensesClicked">
+			<StackPanel Name="sideMenuStackPanel"
+						Style="{StaticResource NavigationSectionPanel}">
+				
+				<local:SideBarMenu HeaderBackground="LightGreen"
+								   HeaderFontFamily="Arial"
+								   HeaderFontSize="24"
+								   HeaderForeground="DarkGreen"
+								   ChildBackground="LightGreen"
+								   ChildFontFamily="Cambria"
+								   ChildFontSize="18"
+								   ChildForeground="DarkGreen"
+								   HeaderText="Expenses"
+								   ChildItems="{Binding MenuItems1}"
+								   VerticalAlignment="Top"
+								   Width="{Binding Width, ElementName=sideMenuStackPanel}" />
 
-					<WrapPanel Style="{StaticResource NavigationButtonWrap}">
-
-						<Image Source="/ExpenseTracker;component/Resources/ExpenseIcon.png"
-							   Width="50" />
-						<TextBlock Text="Expenses"
-								   Style="{StaticResource MenuStyle}" />
-
-					</WrapPanel>
-				</Button>
-				<Button Name="categoryButton"
-						Style="{StaticResource MenuButtonStyle}"
-						Click="OnCategoryClicked">
-
-					<WrapPanel Style="{StaticResource NavigationButtonWrap}">
-						<Image Source="/ExpenseTracker;component/Resources/ExpenseIcon.png"
-							   Width="50" />
-						<TextBlock Text="Category"
-								   Style="{StaticResource MenuStyle}" />
-					</WrapPanel>
-
-				</Button>
 			</StackPanel>
-		</Grid>
-	</Grid>-->
-
-	<StackPanel>
-		<!--<Image Source="Resources/ExpenseIcon.png" />-->
-		<local:SideBarMenu HeaderBackground="LightGreen"
-						   HeaderFontFamily="Arial"
-						   HeaderFontSize="24"
-						   HeaderForeground="DarkGreen"
-						   ChildBackground="LightGreen"
-						   ChildFontFamily="Cambria"
-						   ChildFontSize="18"
-						   ChildForeground="DarkGreen"
-						   HeaderText="Expenses"
-						   ChildItems="{Binding MenuItems1}"
-						   HorizontalAlignment="Left"
-						   VerticalAlignment="Top"
-						   Margin="10" />
-	</StackPanel>
+		</Grid>-->
+		<local:UserControl1 MyProperty="aaa" />
+	</Grid>
 
 </Window>
