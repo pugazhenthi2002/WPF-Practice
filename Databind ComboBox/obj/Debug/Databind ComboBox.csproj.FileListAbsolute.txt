@@ -1,7 +1,6 @@
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\Databind ComboBox\bin\Debug\Databind ComboBox.exe.config
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\Databind ComboBox\bin\Debug\Databind ComboBox.exe
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\Databind ComboBox\bin\Debug\Databind ComboBox.pdb
-C:\Users\Pugaizhenthi\source\repos\WPF_Practice\Databind ComboBox\obj\Debug\Databind ComboBox.csprojAssemblyReference.cache
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\Databind ComboBox\obj\Debug\MainWindow.g.cs
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\Databind ComboBox\obj\Debug\App.g.cs
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\Databind ComboBox\obj\Debug\Databind ComboBox_MarkupCompile.cache

@@ -3,11 +3,11 @@
                     xmlns:local="clr-namespace:ExpenseTracker.Themes">
 	
 	<SolidColorBrush x:Key="PrimaryI"
-					 Color="#E5E5CB" />
+					 Color="#1A4D2E" />
 	<SolidColorBrush x:Key="PrimaryII"
-					 Color="#D5CEA3" />
+					 Color="#4F6F52" />
 	<SolidColorBrush x:Key="SecondaryI"
-					 Color="#3C2A21" />
+					 Color="#E8DFCA" />
 	<SolidColorBrush x:Key="SecondaryII"
-					 Color="#1A120B" />
+					 Color="#F5EFE6" />
 </ResourceDictionary>

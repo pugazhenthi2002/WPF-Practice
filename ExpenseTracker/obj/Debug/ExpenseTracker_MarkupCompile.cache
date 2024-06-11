@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\ExpenseTracker\App.xaml
-3-573645627
+61053454030
 
-8-70815725
+11-1689816906
 14434534373
-ColorResource.xaml;MainWindow.xaml;Style.xaml;
+MainWindow.xaml;SideBarMenu.xaml;style.xaml;Themes\Dark.xaml;Themes\Light.xaml;UserControl1.xaml;
 
 False
 

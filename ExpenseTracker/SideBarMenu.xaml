@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="ExpenseTracker.SideBarMenu"
+			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:local="clr-namespace:ExpenseTracker"
+			 mc:Ignorable="d"
+			 d:DesignHeight="75"
+			 d:DesignWidth="300"
+			 x:Name="sliderMenuControl">
+	<UserControl.Resources>
+		<Style x:Key="menuHeaderWrap"
+			   TargetType="WrapPanel">
+			<Setter Property="Orientation"
+					Value="Horizontal" />
+			<Setter Property="HorizontalAlignment"
+					Value="Left" />
+		</Style>
+
+		<Style x:Key="menuHeaderImage"
+			   TargetType="Image">
+			<Setter Property="Width"
+					Value="{Binding ElementName=menuBarImage, Path=ActualHeight}" />
+		</Style>
+
+		<Style x:Key="menuButton"
+			   TargetType="Button">
+			<Setter Property="HorizontalContentAlignment"
+					Value="Left" />
+		</Style>
+
+		<Style x:Key="childStyle"
+			   TargetType="TextBlock">
+			<Setter Property="FontFamily"
+					Value="{Binding ChildFontFamily, ElementName=sliderMenuControl}" />
+			<Setter Property="FontSize"
+					Value="{Binding ChildFontSize, ElementName=sliderMenuControl}" />
+			<Setter Property="Foreground"
+					Value="{Binding ChildForeground, ElementName=sliderMenuControl}" />
+			<Setter Property="Background"
+					Value="{Binding ChildBackground, ElementName=sliderMenuControl}" />
+			<Setter Property="Margin"
+					Value="0" />
+		</Style>
+
+		<Style x:Key="headerStyle"
+			   TargetType="TextBlock">
+			<Setter Property="FontFamily"
+					Value="{Binding HeaderFontFamily, ElementName=sliderMenuControl}" />
+			<Setter Property="FontSize"
+					Value="{Binding HeaderFontSize, ElementName=sliderMenuControl}" />
+			<Setter Property="Foreground"
+					Value="{Binding HeaderForeground, ElementName=sliderMenuControl}" />
+			<Setter Property="Background"
+					Value="{Binding HeaderBackground, ElementName=sliderMenuControl}" />
+		</Style>
+
+	</UserControl.Resources>
+
+	<StackPanel>
+		<Button Style="{StaticResource menuButton}"
+				Click="OnSliderMenuClicked">
+			<WrapPanel Style="{StaticResource menuHeaderWrap}">
+				<Rectangle Width="10"
+						   Fill="{Binding HeaderBackground, ElementName=sliderMenuControl}" />
+				<Image Name="menuBarImage"
+					   Width="{Binding ElementName=sliderMenuControl, Path=ActualHeight}" />
+				<TextBlock Name="sliderHeader"
+						   Text="{Binding HeaderText, ElementName=sliderMenuControl}"
+						   Style="{StaticResource headerStyle}" />
+			</WrapPanel>
+		</Button>
+		<ItemsControl x:Name="itemsControl"
+					  Visibility="Collapsed"
+					  ItemsSource="{Binding ChildItems, ElementName=sliderMenuControl}">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding}"
+							   Style="{StaticResource childStyle}" />
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</StackPanel>
+</UserControl>

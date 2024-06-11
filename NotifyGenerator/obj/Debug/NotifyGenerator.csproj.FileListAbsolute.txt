@@ -12,4 +12,3 @@ C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\Notify
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.csproj.CoreCompileInputs.cache
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.exe
 C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.pdb
-C:\Users\Pugaizhenthi\source\repos\WPF_Practice\NotifyGenerator\obj\Debug\NotifyGenerator.csprojAssemblyReference.cache

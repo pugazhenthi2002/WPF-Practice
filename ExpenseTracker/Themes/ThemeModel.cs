@@ -15,6 +15,11 @@ namespace ExpenseTracker.Themes
 
     class ThemeModel
     {
+        public ThemeModel()
+        {
+            CurrentTheme = Theme.Dark;
+        }
+
         public Theme CurrentTheme { get; set; }
         public void ChangeTheme()
         {
@@ -34,7 +39,7 @@ namespace ExpenseTracker.Themes
             {
                 theme = new ResourceDictionary()
                 {
-                    Source = new Uri("Themes/Dark.xaml", UriKind.Relative)
+                    Source = new Uri("Themes/Light.xaml", UriKind.Relative)
                 };
             }
             App.Current.Resources.MergedDictionaries.Add(theme);

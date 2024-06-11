@@ -7,15 +7,72 @@
 		mc:Ignorable="d"
 		Title="MainWindow"
 		Height="450"
-		Width="800"
-		AllowsTransparency="True"
-		WindowStyle="None">
+		Width="800">
+
+	<!--<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="75" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<TabPanel Grid.Row="0"
+				  Style="{StaticResource HeaderStyle}">
+			<Image Source="/ExpenseTracker;component/Resources/ExpenseIcon.png" />
+			<TextBlock Text="Expense Tracker"
+					   Style="{StaticResource TitleStyle}" />
+		</TabPanel>
+
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="200" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+			<StackPanel Style="{StaticResource NavigationSectionPanel}">
+				<Button  Name="expensesButton"
+						 Style="{StaticResource MenuButtonStyle}"
+						 Click="OnExpensesClicked">
+
+					<WrapPanel Style="{StaticResource NavigationButtonWrap}">
+
+						<Image Source="/ExpenseTracker;component/Resources/ExpenseIcon.png"
+							   Width="50" />
+						<TextBlock Text="Expenses"
+								   Style="{StaticResource MenuStyle}" />
+
+					</WrapPanel>
+				</Button>
+				<Button Name="categoryButton"
+						Style="{StaticResource MenuButtonStyle}"
+						Click="OnCategoryClicked">
+
+					<WrapPanel Style="{StaticResource NavigationButtonWrap}">
+						<Image Source="/ExpenseTracker;component/Resources/ExpenseIcon.png"
+							   Width="50" />
+						<TextBlock Text="Category"
+								   Style="{StaticResource MenuStyle}" />
+					</WrapPanel>
+
+				</Button>
+			</StackPanel>
+		</Grid>
+	</Grid>-->
 
 	<StackPanel>
-		<DockPanel DockPanel.Dock="Top"
-				   Height="50">
-			<Image Source="/ExpenseTracker;component/Resources/ExpenseIcon.png" />
-			<TextBlock Text="Expense Tracker"/>
-		</DockPanel>
+		<!--<Image Source="Resources/ExpenseIcon.png" />-->
+		<local:SideBarMenu HeaderBackground="LightGreen"
+						   HeaderFontFamily="Arial"
+						   HeaderFontSize="24"
+						   HeaderForeground="DarkGreen"
+						   ChildBackground="LightGreen"
+						   ChildFontFamily="Cambria"
+						   ChildFontSize="18"
+						   ChildForeground="DarkGreen"
+						   HeaderText="Expenses"
+						   ChildItems="{Binding MenuItems1}"
+						   HorizontalAlignment="Left"
+						   VerticalAlignment="Top"
+						   Margin="10" />
 	</StackPanel>
+
 </Window>
